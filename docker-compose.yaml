@@ -1,0 +1,18 @@
+---  # Main
+version: '3'
+services:
+
+  src:
+    build: ./src
+    container_name: twitter-scraper
+    volumes:
+      - ./src:/twitter
+    command: tail -f /dev/null
+    dns: 8.8.8.8
+    environment:
+      APP_KEY: $APP_KEY
+      APP_SECRET: $APP_SECRET
+      OAUTH_TOKEN: $OAUTH_TOKEN
+      OAUTH_TOKEN_SECRET: $OAUTH_TOKEN_SECRET
+
+...
